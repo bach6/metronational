@@ -64,6 +64,27 @@
             }
           }
         });
+
+        // Click on timeline button
+  $('.timeline-btn').on('click', function (e) {
+    e.stopPropagation(); // Prevent bubbling to document
+    $(this).removeClass('show');
+    $('.timeline-year-mobile-ctr').removeClass('hide');
+  });
+
+  // Click outside the mobile year container
+  $(document).on('click', function (e) {
+    const $target = $(e.target);
+
+    if (
+      !$target.closest('.timeline-year-mobile-ctr').length &&
+      !$target.closest('.timeline-btn').length
+    ) {
+      $('.timeline-btn').addClass('show');
+      $('.timeline-year-mobile-ctr').addClass('hide');
+    }
+  });
+        
       }
 
       // Burger click (scroll to top, then restore)
