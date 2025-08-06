@@ -1,5 +1,3 @@
-
-<script>
   $(document).ready(function () {
     let scrollY = 0;
     let lastScrollTop = 0;
@@ -118,4 +116,3 @@
 
     $(window).on('scroll', handleScrollCollapse);
   });
-</script>
